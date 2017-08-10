@@ -9,12 +9,14 @@ CategoriesService.$inject = ['$http']
 function CategoriesService($http) {
   var service = this;
 
-  var response = $http({
+  service.response = function(){
+    var req = $http({
       method: "GET",
       url: ("https://davids-restaurant.herokuapp.com/categories.json")
     });
-
-  return response;
+    return req;
+  }
+  
 
 }
 

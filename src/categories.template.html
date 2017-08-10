@@ -1,7 +1,12 @@
-
-<h3>I am here</h3>
-<ul>
-  <li ng-repeat="category in $ctrl.categories"
-    {{ category }}
-  </li>
-</ul>
+<div class="row card-group">
+    <div class="col-md-4" ng-repeat="category in $ctrl.categories">
+        <div class="card" style="width: 20rem;">
+          <img class="card-img-top img-fluid" src="images/{{category.name}}.jpeg" alt="Card image cap">
+          <div class="card-block">
+            <h4 class="card-title">{{category.name}}</h4>
+            <!--<p class="card-text">{{category.special_instructions}}</p>-->
+            <a ui-sref="menuitems({short_name: '{{category.short_name}}'})" class="btn btn-primary">{{category.name}}'s Menu</a>
+          </div>
+        </div>
+    </div>
+</div>
